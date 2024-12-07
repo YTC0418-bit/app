@@ -9,5 +9,9 @@ class Textpath:
       self.__mode='wb'
     elif self.__bin and not self.__new:
       self.__mode='b+'
+    elif not self.__bin and self.__new:
+      self.__mode='w+'
+    else: 
+      self.__mode='a+'
     self.__file=open(self.path,mode=self.__mode)
 
